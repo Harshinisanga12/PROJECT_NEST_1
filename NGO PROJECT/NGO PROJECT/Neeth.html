@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: white;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        section {
+            max-width: 600px;
+            margin: 2em auto;
+            padding: 1em;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        button {
+            padding: 0.5em 1em;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #loginForm,
+        #donateForm {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 0.5em;
+        }
+
+        input {
+            padding: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        #donateForm {
+            display: none;
+        }
+
+        #openDonateForm {
+            margin-top: 1em;
+        }
+
+        #upiOptions {
+            display: none;
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1em;
+        }
+
+        .social-login button {
+            flex: 1;
+            margin-right: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Donation App</h1>
+    </header>
+    <section>
+        <div id="loginForm">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username">
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+
+                <button type="button" onclick="login()">Login</button>
+            </form>
+
+            <div class="social-login">
+                <!-- Placeholder for Google login button -->
+                <button onclick="loginWithGoogle()">Login with Google</button>
+                
+                <!-- Placeholder for Facebook login button -->
+                <button onclick="loginWithFacebook()">Login with Facebook</button>
+            </div>
+        </div>
+
+        <div id="donateForm">
+            <h2>Make a Donation</h2>
+            <form id="donationForm">
+                <label for="donationType">Select Donation Type:</label>
+                <select id="donationType" name="donationType">
+                    <option value="food">Food</option>
+                    <option value="money">Money</option>
+                    <option value="medicines">Medicines</option>
+                </select>
+
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" placeholder="Enter amount">
+
+                <button type="button" onclick="showUpiOptions()">Continue</button>
+
+                <div id="upiOptions">
+                    <h3>UPI Options</h3>
+                    <label for="upiType">Select UPI Option:</label>
+                    <select id="upiType" name="upiType">
+                        <option value="upi1">UPI Option 1</option>
+                        <option value="upi2">UPI Option 2</option>
+                        <option value="upi3">UPI Option 3</option>
+                    </select>
+
+                    <button type="button" onclick="openUpiScanner()">Open UPI Scanner</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="openDonateForm">
+            <button onclick="openDonateForm()">Open Donation Form</button>
+        </div>
+    </section>
+
+    <button onclick="openScanner()" style="position: fixed; bottom: 20px; right: 20px;">Open Scanner</button>
+
+    <script>
+        function login() {
+            // Add logic for user authentication here.
+            // For simplicity, let's assume any non-empty username/password is valid.
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username && password) {
+                document.getElementById("loginForm").style.display = "none";
+                document.getElementById("donateForm").style.display = "flex";
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        }
+
+        function loginWithGoogle() {
+            // Placeholder for Google login functionality.
+            alert('Login with Google is not implemented yet.');
+        }
+
+        function loginWithFacebook() {
+            // Placeholder for Facebook login functionality.
+            alert('Login with Facebook is not implemented yet.');
+        }
+
+        function showUpiOptions() {
+            const donationAmount = document.getElementById("amount").value;
+
+            if (donationAmount > 0) {
+                document.getElementById("upiOptions").style.display = "block";
+            } else {
+                alert("Please enter a valid donation amount.");
+            }
+        }
+
+        function submitDonation() {
+            const donationType = document.getElementById("donationType").value;
+            const amount = document.getElementById("amount").value;
+
+            // You can add logic here to handle the donation, e.g., send it to a server.
+
+            alert(Thank you for your ${donationType} donation of ${amount}!);
+        }
+
+        function openScanner() {
+            // Add logic to open the scanner here.
+            alert('Scanner is opening...');
+        }
+
+        function openUpiScanner() {
+            // Add logic to open the UPI scanner here.
+            alert('UPI Scanner is opening...');
+        }
+
+        function openDonateForm() {
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("donateForm").style.display = "flex";
+        }
+    </script>
+</body>
+</html>

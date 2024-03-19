@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <head>
+        <title>NGO Project</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            ul {
+                    list-style-type: none;
+                    background-color: #060202; 
+                }
+                
+                li {
+                    float: right;
+                    letter-spacing: 1px;
+                    margin: 10px;
+                }
+                li :hover{
+                    background-color: rgb(5, 92, 13);
+                }
+                li a{
+                    color:black;
+                    padding:8PX 9PX;
+                    font-size: 20px;
+                    text-decoration: none;
+                }
+                input[type=text], select, textarea,input[type=dropdown],interested {
+                  font-size: 20px;
+                  width: 100%;
+                  padding: 12px;
+                  border: 2px solid rgb(11, 3, 0);
+                  border-radius: 15px;
+                  margin-top: 10px;
+                  margin-bottom: 16px;
+                }
+                input[type=submit] {
+                  background-color: #06754a;
+                  color: whitesmoke;
+                  border: yellowgreen;
+                  padding: 12px 20px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                }
+                .container {
+                  border-radius: 5px;
+                  background-color: rgb(135, 127, 124);
+                  padding: 20px;
+                  margin-left: 500px;
+                  margin-right: 500px;
+                }
+                * {box-sizing: border-box;}
+                .mySlides {display: none;}
+                img {vertical-align: middle;}
+                .slideshow-container {
+                  max-width: 1450px;
+                  position: relative;
+                  margin: auto;
+                }
+                .text {
+                  color: #f2f2f2;
+                  font-size: 15px;
+                  padding: 8px 12px;
+                  position: absolute;
+                  width: 100%;
+                  top: 70%; 
+                  left: 50%;
+                  transform: translate(-50%, -50%); 
+                  text-align: left;
+                }
+                .numbertext {
+                  color:#f2f2f2;
+                  font-size: 12px;
+                  padding: 8px 12px;
+                  position: absolute;
+                  top:0;
+                }
+                .dot {
+                  height: 15px;
+                  width: 15px;
+                  margin: 0 2px;
+                  background-color: #bbb;
+                  border-radius: 50%;
+                  display:inline-block;
+                  transition: background-color 0.6s ease;
+                }
+                .active {
+                  background-color: #514c4c;
+                }
+                .fade {
+                  animation-name: fade;
+                  animation-duration: 3s;
+                }
+                @keyframes fade {
+                  from {opacity: .4}
+                  to {opacity: 1}
+                }
+                @media only screen and (max-width: 1450px) {
+                  .text {font-size: 11px;}
+                }
+               </style>
+               </head>
+               <body>
+        <ul>
+            <li><a href="/DONATEPAGE"><i class="fa fa-fw fa-dollar"></i><b>DONATE</b></a></li>
+            <li><a href="#contact" ><i class="fa fa-fw fa-envelope"></i><b>CONTACT</b></a></li>
+            <li><a href="/Aboutus"><i class="fa fa-fw fa-address-card"></i><b>ABOUT US</b></a></li>
+            <li><a href="/mainpage"><i class="fa fa-fw fa-home"></i><b>HOME</b></a></li>
+        </ul>
+        <h1 style="text-align:center;color:#060202;font-size:75px;font-family: 'Fjalla One',san-serif;"><marquee>Helping Hands</marquee></h1>
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <div class="numbertext">1/4</div>
+            <img src="https://th.bing.com/th/id/R.0709fb40b12695b4b83be66787ca79e6?rik=psQq6fNwXfz7fg&pid=ImgRaw&r=0.jpg" style="width: 1450px;">
+            <div class="text" style="font-size: 70px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;top:75%">"Get Involved<br>With Helping Hands."
+            <h1 style="font-size: 55px;background-color: rgb(112, 150, 36);margin-right: 1050px;border-radius: 15px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><pre> Save Lives</pre></h1></div>
+          </div>
+          <div class="mySlides fade">
+            <div class="numbertext">2/4</div>
+            <img src="https://learningonline.xyz/wp-content/uploads/2023/06/10-barriers-to-education-around-the-world.jpeg" style="width: 1450px;">
+            <div class="text" style="font-size: 70px;top: 80%;"><b>"Let's Build The <br>Better World <br>Together"</b></div>
+          </div>
+          <div class="mySlides fade">
+            <div class="numbertext">3/4</div>
+            <img src="https://cdn.givind.org/static/images/campaign/mission-10-million-meals.jpg" style="width: 1450px;">
+            <div class="text" style="font-size: 80px;top: 75%;color: #060202;"><b>"Bringing smiles <br> to millions."</b></div>
+          </div>
+          <div class="mySlides fade">
+            <div class="numbertext">4/4</div>
+            <img src="https://www.impetus.ngo/Gallery/Medical%20Check/IMG-20170212-WA0009.jpg" style="width: 1450px;">
+            <div class="text" style="font-size: 80px;top: 75%;color: #060202;"><b>"Your Support <br> is Powerful."</b></div>
+          </div>
+        </div>
+        <br>
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+          <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+        <script>
+          let slideIndex = 0;
+          showSlides();
+          
+          function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {slideIndex = 1}    
+              for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+              setTimeout(showSlides, 2000); 
+              }
+              </script>
+              </body>
+</html>
+<html>
+<body>
+<h2 style="text-align:center;font-size: 70px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">EVENTS</h2>
+    <h2 style="text-align:left;font-size: 25px;font-family: italic;">DONATING FOOD:</h2>
+    <img src="https://charitism-campaigns.s3.ap-south-1.amazonaws.com/charitism-v2/campaigns/68b0c806-7d1d-4fe9-babb-c26c772885bc" width="350" height="350">
+    <img src="https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/115000/115153/image/5d35baafa2676.jpeg" width="350" height="350">
+    <img src="https://b.zmtcdn.com/data/o2_assets/fb8ec579b8f48d197f042a8e229e8c661621256027.png" width="350" height="350">
+    <img src="https://en-media.thebetterindia.com/uploads/2015/08/feeding-India.jpg" width="350" height="350">
+    <p style="font-size:30px;">THERE ARE MANY CHILDREN WHO SLEEP EMPTY STOMACH!<br><br>Whenever you waste food remember the poor children.<br>Wasting food is such a bummer! It's important to be mindful and try to minimize food waste.🚫.There are many eyes👀 looking with starvation.There are many children dying at a very  small age with starvation 😔.<br>Just think for  a second before you dump your plate 🍱in the dustbin. It's not a big deal to donate a little amount of food to the children in needy.</p>
+    <h2 style="text-align: left;font-size: 25px;font-family: italic;">EDUCATION:</h2>
+    <img src="https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/25000/25040/image/1637d03024396a02313e472ca1619bc390f109e9.jpg" width="350" height="`1000">
+    <img src="https://www.educationworld.in/wp-content/uploads/2019/12/formal-education.jpg" width="350" height="300">
+    <img src="https://ssg-prod.s3.amazonaws.com/projects/9f214347-e4b5-439a-bc09-2a4cee2e9a8b/CHILD%20%283%29.jpg" width="350" height="300">
+    <img src="https://roshnisanstha.com/wp-content/uploads/2020/11/education-for-all-donate.jpg" width="350" height="300">
+    <p style="font-size: 30px;">Education for poor children is so important which  helps to break the cycle of poverty and give them a better future.📚✨. Education is the strongest weapon that completely changes their lives.Lets build a nation without poverty.</p>
+    <h2 style="text-align: left;font-size: 25px;font-family: italic;">HEALTH:</h2>
+    <img src="https://www.concernedforworkingchildren.org/wp-content/uploads/DSC_7089.jpg" width="365" height="350">
+    <img src="https://images.hindustantimes.com/rf/image_size_630x354/HT/p2/2017/08/29/Pictures/files-india-health-children_c29f9614-8c82-11e7-af36-115e347150c8.jpg" width="350" height="350">
+    <img src="https://bsmedia.business-standard.com/_media/bs/img/article/2018-02/23/full/1519324555-7005.jpg?im=FeatureCrop,size=(826,465)" width="350" height="350">
+    <img src="https://www.povertyactionlab.org/sites/default/files/styles/full_width_medium_cropped/public/images/2020/02/child-health-initiative_3x2ratio.jpg?itok=4Mc3CI_1" width="350" height="350">
+    <p style="font-size: 30px;">Helping the poor children for their health is a noble cause.Lets help the little ones to lead a healthy life🫴<br>Making little things brings a lot of happiness 😊.Together, we can make a positive impact on their well-being. 🤝🏼💙
+    </p>
+</body>
+</html>
+<html>
+  <head>
+    <style>
+      footer{
+        text-align: left;
+        background-color:rgb(135, 127, 124) ;
+        color:white;
+      }
+      .fa{
+        font-size: 30px;
+        width:35px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+      }
+      .fa:hover{
+        opacity:0.7;
+      }
+      .fa-facebook{
+        color:white;
+      }
+      .fa-twitter{
+        color:white;
+      }
+      .fa-instagram{
+        color:white;
+      }
+      .fa-youtube{
+        color:white;
+      }
+    </style>
+  </head>
+  <body>
+    <footer>
+      <section id="contact">
+      <h3 style="text-align:center;font-size: 50px;">Contact Form</h3>
+<p style="text-align: center;font-size: 35px;"><b>If You Have Any Queries Please Contact Us:</b></p>
+  <form action="/action_page.php" method="post">
+    <div class="container">
+        <label for="fname" style="font-size: 30px;"><b>Name</b></label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        
+        <label for="lname" style="font-size: 30px;"><b>Last Name</b></label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        
+        <label for="subject" style="font-size: 30px;"><b>Subject</b></label><br>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        
+        <label for="interested" style="font-size: 30px;">If you are interested as volunteer</label>
+        <p style="font-size: 30px;">Choose an option:</p>
+        <select id="interested" name="interested">
+           <option value="yes">Yes</option>
+           <option value="no">No</option>
+        </select>
+        
+      <br><br>
+      <button type="button" onclick="submitForm()">Submit</button>
+      <p class="message" id="message"></p>
+    </div>
+    </form>
+    <center>
+      <p style="font-size:30px;text-align: center;"><b>Social media pages:</b></p>
+      <a href="#" class="fa fa-twitter"></a>
+      <a  href="#" class="fa fa-facebook"> </a>
+      <a href="https://instagram.com/ngo______01?igshid=OGQ5ZDc2ODk2ZA==" class="fa fa-instagram"></a>
+      <a href="#" class="fa fa-youtube"></a>
+      <p style="font-size: 30px;text-align: center;"><b>CONTACT US:</b></p>
+    <p style="font-size: 25px;text-align: center;">If you have any questions or would like to get involved, please feel free to reach out to us at info</p>
+      <p style="font-size: 20px;text-align: center;"><b>Author:NGO</b><br>
+    <a href="mailto:kavyasirugubattula@gmai.com" style="font-size: 20px;text-align: center;">kavyasirugubattula@gmail.com</a></p>
+    <p style="font-size: 20px;text-align: center;">CONTACT NUMBER:99-777-99-777</p>
+  </center>
+      </section>
+    </footer>
+     <!-- ... (your existing form) ... -->
+
+     <script>
+        function submitForm() {
+            const fname = document.getElementById('fname').value;
+            const lname = document.getElementById('lname').value;
+            const subject = document.getElementById('subject').value;
+            const interested = document.getElementById('interested').value;
+
+            const jsonData = {
+                fname: fname,
+                lname: lname,
+                subject: subject,
+                interested: interested
+            };
+
+            fetch('http://127.0.0.1:5000/submit_contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(jsonData),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message); 
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert('Data failed to store in the backend.'); 
+                });
+        }
+    </script>
+  </body>
+</html>

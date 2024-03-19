@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DONATION FORM</title>
+    <style>
+        
+        body {
+            font-size: 30px;
+            background-color: black;
+            color: white;
+        }
+
+        input[type=text],
+        input[type=email],
+        input[type=tel] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            font-size: 20px;
+        }
+
+        button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px;
+            width: 20%;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        input[type=submit] {
+            background-color: #06754a;
+            color: whitesmoke;
+            border: yellowgreen;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .container {
+            border-radius: 5px;
+            padding: 20px;
+            margin-left: 500px;
+            margin-right: 500px;
+        }
+
+        .message {
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align: center; font-size: 75px;">Donation form</h2>
+        <form id="donationForm">
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Enter your email ID" name="email" id="email" required>
+                <label for="tel"><b>Mobile number</b></label>
+                <input type="tel" placeholder="Enter your number" name="number" id="number" required>
+                <button type="button" onclick="submitForm()"><a href="/appcode" style="text-decoration: solid;color: white;">Submit</a></button>
+                <p class="message" id="message"></p>
+            </div>
+        </form>
+    
+        <script>
+            function submitForm() {
+              const uname = document.getElementById('uname').value;
+              const email = document.getElementById('email').value;
+              const number = document.getElementById('number').value;
+            
+              const jsonData = {
+                uname: uname,
+                email: email,
+                number: number
+              };
+            
+              fetch('http://127.0.0.1:5000/submit_donation', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(jsonData),
+              })
+              .then(response => response.json())
+              .then(data => {
+                // Check if the submission was successful
+                if (data && data.success) {
+                  // Show a popup with one button
+                  const popup = window.open('', '_blank');
+                  popup.document.write(`
+                    <div>
+                      <h2>Donation successful!</h2>
+                      <button onclick="openForm()">Open app.html</button>
+                    </div>
+                  `);
+                } else {
+                  // Show an alert
+                  alert(data ? data.message : 'Unknown error occurred.');
+                }
+              })
+              .catch((error) => {
+                console.error('Error:', error);
+                alert('Data failed to store in the backend.');
+              });
+            }
+            
+            // Function to open form.html
+            function openForm() {
+              window.open('app.html');
+            }
+            </script>
+            
+            
+            
+            
+        
+        
+        
+        
+        
+        
+</body>
+
+</html>
